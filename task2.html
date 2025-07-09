@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Button Click Example</title>
+</head>
+<body>
+
+  <button id="Button">Click me</button>
+
+  <script>
+    const button = document.getElementById("Button");
+
+    let arr=[];
+    var sum=0;
+    for(var i= 0; i<101 ;i++ ){
+
+arr.push(i);
+
+    sum +=i ;
+}
+    function handleClick() {
+      console.log(sum);
+    }
+
+    button.addEventListener("click", handleClick);
+  </script>
+
+</body>
+</html>
