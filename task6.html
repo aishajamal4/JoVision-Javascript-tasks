@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title> multi-function Buttons</title>
+</head>
+<body>
+
+  <h2>JavaScript Array Methods</h2>
+
+  <button id="btn1">Remove Multiples of 3</button>
+  <button id="btn2">Add 100–150 to Array</button>
+  <button id="btn3">Add 3 to Each Number</button>
+  <button id="btn4">Print Index 20–40</button>
+  <button id="btn5">Shuffle and Sort Descending</button>
+
+  <script>
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // Button 1
+    document.getElementById("btn1").addEventListener("click", function () {
+      let arr = [];
+      for (let i = 0; i <= 100; i++) arr.push(i);
+      let filtered = arr.filter(num => num % 3 !== 0);
+      console.log("Without numbers divisible by 3:", filtered);
+    });
+
+    // Button 2
+    document.getElementById("btn2").addEventListener("click", function () {
+      let arr = [];
+      for (let i = 0; i <= 100; i++) arr.push(i);
+      for (let i = 101; i <= 150; i++) arr.push(i);
+      console.log("Extended array from 0 to 150:", arr);
+    });
+
+    // Button 3
+    document.getElementById("btn3").addEventListener("click", function () {
+      let arr = [];
+      for (let i = 0; i <= 100; i++) arr.push(i);
+      let updated = arr.map(num => num + 3);
+      console.log("Each element +3:", updated);
+    });
+
+    // Button 4
+    document.getElementById("btn4").addEventListener("click", function () {
+      let arr = [];
+      for (let i = 0; i <= 100; i++) arr.push(i);
+      let sliced = arr.slice(20, 41); 
+      console.log("Elements from index 20 to 40:", sliced);
+    });
+
+    // Button 5
+
+
+    
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    document.getElementById("btn5").addEventListener("click", function () {
+      let arr = [];
+      for (let i = 0; i <= 100; i++) arr.push(i);
+      shuffleArray(arr);
+      console.log("Shuffled array:", arr);
+      let sortedDesc = [...arr].sort((a, b) => b - a);
+      console.log("Sorted descending:", sortedDesc);
+    });
+  </script>
+
+</body>
+</html>

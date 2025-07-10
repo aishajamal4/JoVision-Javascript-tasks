@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live clock</title>
+</head>
+<body>
+
+    
+
+  <div id="clock"> </div>
+
+  <script>
+    function formatTimeUnit(unit) {
+      return unit < 10 ? '0' + unit : unit;
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const hours = formatTimeUnit(now.getHours());
+      const minutes = formatTimeUnit(now.getMinutes());
+      const seconds = formatTimeUnit(now.getSeconds());
+
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      document.getElementById("clock").textContent = timeString;
+    }
+
+    // Run once immediately
+    updateClock();
+
+    // Then every second
+    setInterval(updateClock, 1000);
+  </script>
+
+
+</body>
+</html>
